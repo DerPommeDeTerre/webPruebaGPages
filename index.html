@@ -1,90 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <title>Nimbus Panem</title>
-    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Leobardo Maya: desarrollador de software y traductor profesional, front-end y back-end.">
+    <title>Leobardo Maya | Nimbus Panem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <p class="logo">Nimbus Panem</p>
-
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-
+            <a class="logo" href="index.html">Nimbus Panem</a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+            <label for="menu-toggle" class="menu-icon"><span></span><span></span><span></span></label>
             <nav class="nav-menu">
-                <a href="#somos-proya">Home</a>
-                <a href="#nuestros-programas">Sobre mí</a>
-                <a href="#caracteristicas">Contacto</a>
+                <a href="index.html" class="activo">Home</a>
+                <a href="sobre-mi.html">Sobre mí</a>
+                <a href="contacto.html">Contacto</a>
             </nav>
         </div>
     </header>
 
-    <section id="hero">
-        <h1>Desarrollo <br> back-end y front-end</h1>
-        <button>Proyectos</button>
-    </section>
-
-    <section id="somos-proya">
-        <div class="container">
-            <div class="img-container"></div>
-            <div class="texto">
-                <h2>Desarollador</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit veritatis a autem sed dignissimos commodi, voluptas incidunt voluptatibus cum, quia neque nulla consequatur laborum accusamus, perspiciatis odio nemo minus vel!</p>
+    <main>
+        <section id="hero">
+            <h1>Desarrollo<br>back-end y front-end</h1>
+            <p>Leobardo Maya, desarrollador de software y traductor profesional.</p>
+            <div class="acciones">
+                <a class="btn" href="#proyectos">Ver proyectos</a>
+                <a class="btn contorno" href="sobre-mi.html">Conóceme</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="nuestros-programas">
-        <div class="container">
-            <h2>Tecnologías</h2>
-            <div class="programas">
-                <div class="carta">
-                    <div class="carta-img" style="background-image: url('media/react.png');"></div>
-                    <div class="carta-info">
-                        <h3>React</h3>                        
-                        <button>Info</button>
-                    </div>
-                </div>
-
-                <div class="carta">
-                    <div class="carta-img" style="background-image: url('media/springBoot.png');"></div>
-                    <div class="carta-info">
-                        <h3>Spring Boot</h3>                        
-                        <button>Info</button>
-                    </div>
-                </div>
-
-                <div class="carta">
-                    <div class="carta-img" style="background-image: url('media/dockerLogo.png');"></div>
-                    <div class="carta-info">
-                        <h3>Docker</h3>            
-                        <button>Info</button>
-                    </div>
+        <section id="desarrollador" class="seccion">
+            <div class="container dividida">
+                <div class="foto" role="img" aria-label="Espacio de trabajo de desarrollo"></div>
+                <div>
+                    <h2>Desarrollador</h2>
+                    <p>Integro un enfoque multidisciplinario en proyectos front-end y back-end. Mi experiencia en comercio electrónico y localización digital me permite crear experiencias web claras, accesibles y pensadas para personas de distintos idiomas.</p>
+                    <p>Me gusta formar equipos con objetivos comunes y mantener una dinámica de trabajo sana.</p>
+                    <a class="btn" href="sobre-mi.html">Conocer mi trayectoria</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="caracteristicas">
-        <div class="container">
-            <h2>Proyectos</h2>
-        </div>
-    </section>
+        <section id="tecnologias" class="seccion oscura">
+            <div class="container">
+                <h2>Tecnologías</h2>
+                <p>Herramientas con las que construyo, pruebo y despliego aplicaciones web.</p>
+                <div class="cartas">
+                    <article class="carta">
+                        <div class="carta-img" style="background-image:url('media/react.png')" role="img" aria-label="Logo de React"></div>
+                        <div class="carta-info">
+                            <h3>React</h3>
+                            <p>Interfaces dinámicas con componentes reutilizables.</p>
+                        </div>
+                    </article>
+                    <article class="carta">
+                        <div class="carta-img" style="background-image:url('media/springBoot.png')" role="img" aria-label="Logo de Spring Boot"></div>
+                        <div class="carta-info">
+                            <h3>Spring Boot</h3>
+                            <p>Servicios y APIs en Java con persistencia JPA.</p>
+                        </div>
+                    </article>
+                    <article class="carta">
+                        <div class="carta-img" style="background-image:url('media/dockerLogo.png')" role="img" aria-label="Logo de Docker"></div>
+                        <div class="carta-info">
+                            <h3>Docker</h3>
+                            <p>Contenedores para desplegar aplicaciones de forma consistente.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <section id="final">
-        <h2>Contáctame</h2>
-        <button>Enviar mensaje</button>
-    </section>
+        <section id="proyectos" class="seccion">
+            <div class="container dividida">
+                <div>
+                    <h2>Proyectos</h2>
+                    <p>Mi código vive en GitHub. Ahí puedes revisar mis proyectos de desarrollo web y back-end.</p>
+                    <a class="btn" href="https://github.com/" target="_blank" rel="noopener">Ver GitHub</a>
+                </div>
+                <div class="proy-img" role="img" aria-label="Vista previa de proyectos"></div>
+            </div>
+        </section>
+
+        <section id="final" class="oscura">
+            <h2>Contáctame</h2>
+            <p>¿Tienes un proyecto o una vacante? Escríbeme.</p>
+            <a class="btn" href="contacto.html">Enviar mensaje</a>
+        </section>
+    </main>
 
     <footer>
-        <div class="container">
-            <p>Nimbus Panem 2026</p>
-        </div>
+        <div class="container"><p>Nimbus Panem 2026</p></div>
     </footer>
 </body>
 </html>

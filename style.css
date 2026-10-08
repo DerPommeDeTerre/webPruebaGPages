@@ -1,0 +1,538 @@
+/* =========================================================
+   BASE
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0 0 15px;
+}
+
+h2 {
+    font-size: 2.2em;
+    margin: 0 0 15px;
+}
+
+h3 {
+    font-size: 1.4em;
+    margin: 0 0 5px;
+}
+
+p {
+    font-size: 1.1em;
+    margin: 0 0 20px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.btn,
+button {
+    display: inline-block;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(20, 130, 85);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover,
+button:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(30, 217, 139);
+    transform: scale(1.06);
+}
+
+/* Botón con solo borde */
+.btn.contorno {
+    background-color: transparent;
+    border: 2px solid rgb(30, 217, 139);
+    box-shadow: none;
+}
+
+.btn.contorno:hover {
+    background-color: rgb(30, 217, 139);
+}
+
+/* Foco visible al navegar con teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgb(30, 217, 139);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   HEADER / MENÚ
+   ========================================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgb(0, 0, 0);
+}
+
+header .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    padding: 22px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+/* Checkbox oculto (controla el menú en móvil) */
+.menu-toggle {
+    display: none;
+}
+
+/* Ícono hamburguesa */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    height: 4px;
+    background-color: rgb(30, 217, 139);
+    border-radius: 2px;
+}
+
+/* Menú: oculto en móvil */
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+/* Menú visible al marcar el checkbox */
+.menu-toggle:checked ~ .nav-menu {
+    display: flex;
+}
+
+.nav-menu a {
+    padding: 8px 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.activo {
+    color: rgb(30, 217, 139);
+    border-bottom-color: rgb(30, 217, 139);
+}
+
+
+/* =========================================================
+   SECCIONES GENERALES
+   ========================================================= */
+
+.seccion {
+    padding: 70px 0;
+}
+
+.oscura {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+
+.etiqueta {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: rgb(20, 130, 85);
+}
+
+.oscura .etiqueta {
+    color: rgb(30, 217, 139);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 60px 24px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+        url("media/green.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+/* =========================================================
+   DESARROLLADOR Y PROYECTOS (texto + imagen)
+   ========================================================= */
+
+.dividida {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.foto {
+    min-height: 300px;
+    border-radius: 15px;
+    background-color: rgb(0, 0, 0);
+    background-image: url("media/desarrollo.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.proy-img {
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    background-image: url("media/proyectos.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   TECNOLOGÍAS (cartas)
+   ========================================================= */
+
+#tecnologias {
+    text-align: center;
+}
+
+.cartas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.carta {
+    width: 100%;
+    max-width: 320px;
+    overflow: hidden;
+    border: 1px solid rgb(20, 130, 85);
+    border-radius: 15px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.carta:hover {
+    transform: translateY(-10px);
+}
+
+.carta-img {
+    height: 160px;
+    background-color: rgb(255, 255, 255);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carta-info {
+    padding: 20px;
+}
+
+.carta-info p {
+    margin: 0;
+    font-size: 1em;
+}
+
+
+/* =========================================================
+   EXPERIENCIA Y EDUCACIÓN (tarjetas en vertical)
+   ========================================================= */
+
+.trayectoria {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.tarjeta {
+    padding: 25px;
+    border: 1px solid rgb(20, 130, 85);
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+
+.fecha {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: rgb(30, 217, 139);
+}
+
+.lugar {
+    margin-bottom: 15px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.tarjeta ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.tarjeta li {
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+
+/* =========================================================
+   HABILIDADES
+   ========================================================= */
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.chips li {
+    padding: 6px 16px;
+    border: 2px solid rgb(30, 217, 139);
+    border-radius: 30px;
+    font-size: 1em;
+}
+
+
+/* =========================================================
+   FINAL (llamada a contacto)
+   ========================================================= */
+
+#final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    padding: 60px 24px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+
+.contacto-container {
+    max-width: 800px;
+}
+
+.contacto-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.contacto-form {
+    padding: 25px 20px;
+    border-radius: 15px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid rgb(20, 130, 85);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+
+.campo textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: rgb(30, 217, 139);
+}
+
+.contacto-form button {
+    width: 100%;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    padding: 30px 0;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border-top: 2px solid rgb(20, 130, 85);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+    text-align: center;
+}
+
+
+/* =========================================================
+   ESCRITORIO (850px o más)
+   ========================================================= */
+
+@media (min-width: 850px) {
+
+    h1 {
+        font-size: 4em;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    .seccion {
+        padding: 100px 0;
+    }
+
+    /* Menú horizontal, sin hamburguesa */
+    .menu-icon {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        padding-bottom: 0;
+    }
+
+    /* Texto e imagen lado a lado */
+    .dividida {
+        flex-direction: row;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .dividida > * {
+        flex: 1;
+    }
+
+    /* Cartas en fila */
+    .cartas {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .carta {
+        width: 30%;
+        max-width: none;
+    }
+
+    .contacto-form {
+        padding: 40px;
+    }
+
+    footer p {
+        text-align: right;
+    }
+}
+
+
+/* =========================================================
+   MÓVIL PEQUEÑO (500px o menos)
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    p {
+        font-size: 1em;
+    }
+
+    .seccion {
+        padding: 50px 0;
+    }
+}
